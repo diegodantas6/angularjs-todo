@@ -41,9 +41,14 @@ angular.module('todoApp', []).controller('ClienteController', function() {
 
     cliente.excluir = function(jovem) {
         
-        var index = cliente.lista.indexOf(jovem);
-        
-        cliente.lista.splice(index, 1);
+        if (confirm('Deseja realmente excluir?')) {
+            
+            var index = cliente.lista.indexOf(jovem);
+            
+            cliente.lista.splice(index, 1);
+            
+        }
+                
     };
     
 });
